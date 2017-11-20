@@ -1,0 +1,18 @@
+<h1>Planets</h1>
+
+<%= link_to "New Planet", new_planet_path %>
+
+<% @planets.each do |planet| %>
+
+	<p>Name: <%= planet.name %></p>
+	<p>Population: <%= planet.population %></p>
+	<p>President: <%= planet.president %></p>
+	<p>Language: <%= planet.lang %></p>
+
+	<%= link_to "Show Page", planet %>
+	<%= link_to "Edit Page", edit_planet_path(planet) %>
+	<%= link_to "Destroy", @planet, method: :delete, data: { confirm: "Are you sure?" } %>
+
+	<br>
+
+<% end %>
